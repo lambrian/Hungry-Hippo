@@ -1,5 +1,6 @@
 var express = require('express');
 var request = require('request');
+var http = require('http');
 
 var app = express();
 
@@ -13,6 +14,5 @@ app.get('/ping', function(req, res) {
     }, function(err, res, body) { });
 });
 
-var server = app.listen(3000, function() {
-    console.log("listening on port %d", server.address().port);
-});
+app.set('port', process.env.PORT || 3000);
+http.createServer(app).listen(app.get('port'), function(){});

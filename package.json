@@ -5,7 +5,8 @@
         "private": true,
         "dependencies": {
             "express": "4.x",
-            "request": ""
+            "request": "",
+            "http": ""
         },
         "scripts": {
             "start": "node app.js"
